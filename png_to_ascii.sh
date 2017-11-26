@@ -20,9 +20,9 @@ sleep 2
 exit
 fi
 
-numfiles=$(ls | wc -l)
+numfiles=$(ls *.png | wc -l)
 
-if [ $numfiles \> 1 ] ; then
+if [ $numfiles \> 0 ] ; then
 for logo in *.png; do
     echo "Logo: $logo"
     convert $logo jpg:- | jp2a --background=dark --colors --height=20 -
